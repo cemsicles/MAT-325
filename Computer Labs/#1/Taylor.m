@@ -2,11 +2,10 @@
 % MAT 325 - 01
 % Feb. 15 2019
 
-format long
-
 %------------------
 % Initialization
 %------------------
+format long
 goal = double(.6418538861);  % target value for ln(1.9), truncated to 10 digits
 
 %------------------
