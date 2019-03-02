@@ -1,0 +1,66 @@
+PART A - Machine Epsilon
+
+1. SINGLE POINT
+   e = 5.9604645e-08
+   e1 = 1
+   
+2. DOUBLE POINT
+   e = 1.110223024625157e-16
+   e1 = 1
+
+   Double point precision has a much smaller machine epsilon value,
+   but our value for "e1" shows it doesn't really matter in the
+   context of adding because both values are very small.
+
+3. MATLAB CONSTANT
+   eps = 2.220446049250313e-16
+   
+   This constant is exactly double our epsilon value found in #2.
+   Since a single increment of machine epsilon (used to calculate
+   "e1" for #1 and #2) didn't make a difference, perhaps double
+   the same values would show addition in "e1".
+
+------------------------------------------------------------------------
+
+PART B - Taylor Series
+
+1. (a) solve ln(1 - x) = ln(1.9)
+                     x = -.9
+  
+   (b) ln((1+x)/(1-x)) = ln(1.9)
+                     x = 9/29
+
+2. Method (b), because its summation involves a larger exponent numerator,
+   x^2k instead of just x^k. This means for large "k", it will be taking
+   larger steps towards convergence.
+
+3.
+Approximation of (a)...
+For (a), # terms = 166.
+Value: 0.64185388610024
+Error: -2.4025e-13
+Total run time: 7.9898e-05 seconds
+
+4.
+Approximation of (b)...
+For (b), # terms = 9.
+Value: 0.64185388614687
+Error: -4.6871e-11
+Total run time: 3.8063e-05 seconds
+
+5. The second series (b) is more efficient for approximating ln(1.9).
+   It takes many less iterations/terms to reach 10 digits of accuracy.
+   It also takes less time to run on a computer. Once again, this is
+   because its rate of convergence is faster having a larger exponent
+   factor in its numerator.
+
+
+
+
+
+
+
+
+
+
+
