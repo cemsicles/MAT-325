@@ -1,0 +1,45 @@
+%-----------------NewtonsMethod------------------------------------------
+
+% Set Variables
+p0  = 1;        % Starting Value
+TOL = 1e-10;    % Tolerance
+Nits  = 1000;   % Maximum number of iterations allowed
+
+i   = 1;
+
+% Program start
+fprintf('Approximating solution using Newtons Method...\n\n\n');
+
+tic     % Initiate timer
+
+while i <= Nits     % While i is less than max
+    p = p0 - ((FCN(p0))/(FCN2(p0)));    % Newtons Method
+    
+    
+    
+    if abs(p - p0) < TOL  % If the solution is smaller than tolerance stop
+        
+        % Solution Printout
+        fprintf('Solution Found!\n')
+        fprintf('Number of iterations is %d \n',i)
+        fprintf('The root is %f \n',p)
+        
+        time=toc; % Stop timer
+        
+        % Timer printout 
+        fprintf('Total run time is %s seconds\n\n', num2str(time, 5))
+        
+        return
+    end
+    
+    i = i + 1;  % Loop execution
+    p0 = p;     % Continue loop with new result
+    
+end
+
+% Error Printout
+fprintf('Solution did not converge after %d iterations!',Nits)
+
+
+%----------------------------End Newtons----------------------------------
+
